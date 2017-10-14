@@ -1,1 +1,2 @@
-Holi probando
+La vista del loguin esta lista, debo cambiar la info dentro de app.vue en src/components para reducir la cantidad de cosas que se pueden ver al iniciar y ver en home.vue los datos que se deben consultar para realizar el loguin.
+Despues de haber logrado cuando se loguee con exito el loguin, se debe pasar a la vista vue del nicolas y adicionalmente tenemos que agregar unas variables de acceso, que estan el index.js en src/auth al resto de paginas para que solo se pueda acceder una vez que se haya confirmado el loguin.
