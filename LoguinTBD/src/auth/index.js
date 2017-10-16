@@ -1,5 +1,6 @@
 import {router} from '../index'
 
+//Aqui incluir las direcciones para realizar las conexiones a la API
 const API_URL = 'http://localhost:3001/'
 const LOGIN_URL = API_URL + 'sessions/create/'
 const SIGNUP_URL = API_URL + 'users/'

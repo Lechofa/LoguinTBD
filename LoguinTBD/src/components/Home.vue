@@ -1,10 +1,12 @@
 <template>
   <div class="col-sm-6 col-sm-offset-3">
-    <h1>Probando Loguin</h1>
+    <h1>Bienvenido a TVReactions</h1>
     <div class="alert alert-danger" v-if="error">
       <p>{{ error }}</p>
     </div>
-    <div class="form-group">
+    fotitos kawaii
+    Info acerca de tv Reaction
+    <!--<div class="form-group">
       <input 
         type="text" 
         class="form-control"
@@ -20,7 +22,7 @@
         v-model="credentials.password"
       >
     </div>
-    <button class="btn btn-primary" @click="submit()">Access</button>
+    <button class="btn btn-primary" @click="submit()">Access</button>-->
   </div>
 </template>
 

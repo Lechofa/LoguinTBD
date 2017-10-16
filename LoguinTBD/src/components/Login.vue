@@ -43,12 +43,13 @@ export default {
   methods: {
 
     submit() {
-
+      //Toma los valores dentro de los comboBox en la pagina para realizar la consulta si el usuario es valido
+      //(Esto se vee en el archivo index.js en la carpeta auth)
       var credentials = {
         username: this.credentials.username,
         password: this.credentials.password
       }
-
+      //Funcionen el archivo index.js
       auth.login(this, credentials, 'secretquote')
 
     }
