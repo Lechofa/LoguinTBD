@@ -24,22 +24,22 @@ auth.checkAuth()
 
 // Sample means of checking user access
 var MyUser = { userOnly: false,
-  admin: false };
+  admin: false }; 
 
 export var router = new VueRouter()
 
 
 router.beforeEach(function (transition) {
-  if(transition.to.adminOnly &&  MyUser.admin == false) {
-    transition.redirect('/login');
+  if(transition.to.adminOnly &&  !MyUser.admin) {
+    transition.redirect('/home');
   } else {  
     transition.next();
   }
 });
 
 router.beforeEach(function (transition) {
-  if(transition.to.userOnly &&  MyUser.userOnly == false) {
-    transition.redirect('/login');
+  if(transition.to.userOnly &&  !MyUser.userOnly) {
+    transition.redirect('/home');
   } else {  
     transition.next();
   }
@@ -52,7 +52,7 @@ router.map({
   },
   '/secretquote': {
     component: SecretQuote
-  },
+  },  
   '/login': {
     component: Login
   },
@@ -62,7 +62,8 @@ router.map({
   },
   '/graficos':{
     component: Graficos,
-    userOnly: true
+    userOnly: true,
+    adminOnly: true
   },
   '/secret-admin-panels': {
     component: Admin

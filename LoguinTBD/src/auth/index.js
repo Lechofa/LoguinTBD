@@ -8,15 +8,18 @@ const SIGNUP_URL = API_URL + 'users/'
 export default {
 
   user: {
-    authenticated: false
+    authenticated: false,
+    admin: false
   },
 
   login(context, creds, redirect) {
     context.$http.post(LOGIN_URL, creds, (data) => {
 
       localStorage.setItem('id_token', data.id_token)
-      this.user.authenticated = true
-      
+      this.user.authenticated = true,
+      //En vez de mandar esto como true de 1, por medio de la APP pasarle el valor correspondiente a admin = True o que el usuario
+      //Tiene permisos de admin
+      this.user.admin = true
       if(redirect) {
         router.go(redirect)
       }
