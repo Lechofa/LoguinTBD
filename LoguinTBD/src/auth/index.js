@@ -13,15 +13,16 @@ export default {
 
   login(context, creds, redirect) {
     context.$http.post(LOGIN_URL, creds, (data) => {
+
       localStorage.setItem('id_token', data.id_token)
-
       this.user.authenticated = true
-
+      
       if(redirect) {
-        router.go(redirect)        
+        router.go(redirect)
       }
 
-    }).error((err) => {
+    }
+    ).error((err) => {
       context.error = err
     })
   },

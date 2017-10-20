@@ -4,8 +4,9 @@
       <ul class="nav navbar-nav">
         <li><a v-link="'home'">Home</a></li>
         <li v-if="!user.authenticated"><a v-link="'login'">Login</a></li>
-        <!--<li v-if="!user.authenticated"><a v-link="'signup'">Sign Up</a></li>-->
-        <li v-if="user.authenticated"><a v-link="'secretquote'">TVReactions</a></li>
+        <!--<li v-if="user.authenticated"><a v-link="'secretquote'">TVReactions</a></li>-->
+        <li v-if="user.authenticated"><a v-link="'graficos'">Graficos</a></li>
+        <li v-if="user.authenticated"><a v-link="'administracion'">Administración</a></li>
         <li v-if="user.authenticated"><a v-link="'login'" @click="logout()">Logout</a></li>
       </ul>
     </div>    

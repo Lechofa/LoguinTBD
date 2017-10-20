@@ -1,16 +1,10 @@
 <template>
   <div class="col-sm-6 col-sm-offset-3">
-    <h1>Bienvenido a TVReactions</h1>
+    <h1>Bienvenido administrador</h1>
     <div class="alert alert-danger" v-if="error">
-      <p>{{ error }}</p>  
+      <p>{{ error }}</p>
     </div>
-    fotitos kawaii
-    Info acerca de tv Reaction
-
-    <div class="Prueba-area">
-        <h2><blockquote>{{ message }}</blockquote></h2>      
-    </div>
-
+    Aqui van los div clases correspondientes a la data que se quiere enviar (las palabras que se quieren buscar en la bolsa de palabras creo)
     <!--<div class="form-group">
       <input 
         type="text" 
@@ -32,24 +26,10 @@
 </template>
 
 <script>
-
-import auth from '../auth'
+//import auth from '../auth'
 
 export default {
 
-  data() {
-
-    return {
-      message: 'Probando q el mensaje se puso bien',
-      error: ''
-    }
-  },
-
-
-
-  methods: {
-
-  }
 
 }
 </script>

@@ -35,6 +35,7 @@ export default {
       credentials: {
         username: '',
         password: ''
+        //esAdmin: ''
       },
       error: ''
     }
@@ -47,10 +48,11 @@ export default {
       //(Esto se vee en el archivo index.js en la carpeta auth)
       var credentials = {
         username: this.credentials.username,
-        password: this.credentials.password
+        password: this.credentials.password,
+        //esAdmin: false
       }
       //Funcionen el archivo index.js
-      auth.login(this, credentials, 'secretquote')
+      auth.login(this, credentials, 'graficos')
 
     }
   }

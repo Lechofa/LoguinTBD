@@ -1,15 +1,11 @@
 <template>
   <div class="col-sm-6 col-sm-offset-3">
-    <h1>Bienvenido a TVReactions</h1>
+    <h1>Graficos TVReactions</h1>
     <div class="alert alert-danger" v-if="error">
-      <p>{{ error }}</p>  
+      <p>{{ error }}</p>
     </div>
-    fotitos kawaii
-    Info acerca de tv Reaction
-
-    <div class="Prueba-area">
-        <h2><blockquote>{{ message }}</blockquote></h2>      
-    </div>
+    Todos los graficos que necesita al alcanze de 1 click
+    <h1>Unir con la parte del Nico</h1>
 
     <!--<div class="form-group">
       <input 
@@ -33,22 +29,22 @@
 
 <script>
 
+
+
+
 import auth from '../auth'
 
 export default {
-
   data() {
-
-    return {
-      message: 'Probando q el mensaje se puso bien',
-      error: ''
-    }
+    //message: 'Probando hola mundo'
   },
 
-
-
   methods: {
-
+    route: {
+    canActivate() {
+      return auth.user.authenticated
+    }
+  }
   }
 
 }
