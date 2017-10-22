@@ -5,7 +5,6 @@ import SecretQuote from './components/SecretQuote.vue'
 import Administracion from './components/Administracion.vue'
 import Graficos from './components/Graficos.vue'
 import Admin from './components/Admin.vue'
-
 //import Signup from './components/Signup.vue'
 
 import Login from './components/Login.vue'
@@ -23,22 +22,37 @@ auth.checkAuth()
 
 
 // Sample means of checking user access
-var MyUser = { userOnly: false,
-  admin: false }; 
+/*const var ActualUser = { 
+  userOnly: false,
+  admin: false}; */
+
+/*
+new Vue({
+  MyUser: {
+    userOnly: false,
+    admin: false
+  }
+})*/
+
+export var ActualUser = {
+  userOnly: false,
+  admin: false
+};
+
 
 export var router = new VueRouter()
 
 
 router.beforeEach(function (transition) {
-  if(transition.to.adminOnly &&  !MyUser.admin) {
-    transition.redirect('/home');
+  if(transition.to.adminOnly &&  !ActualUser.admin) {
+    transition.redirect('/home'); 
   } else {  
     transition.next();
   }
 });
 
 router.beforeEach(function (transition) {
-  if(transition.to.userOnly &&  !MyUser.userOnly) {
+  if(transition.to.userOnly &&  !ActualUser.userOnly) {
     transition.redirect('/home');
   } else {  
     transition.next();
@@ -79,4 +93,3 @@ router.redirect({
 
 
 router.start(App, '#app')
-

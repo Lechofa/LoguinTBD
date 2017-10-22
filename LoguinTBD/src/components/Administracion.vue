@@ -5,6 +5,7 @@
       <p>{{ error }}</p>
     </div>
     Aqui van los div clases correspondientes a la data que se quiere enviar (las palabras que se quieren buscar en la bolsa de palabras creo)
+
     <!--<div class="form-group">
       <input 
         type="text" 

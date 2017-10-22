@@ -53,7 +53,8 @@ export default {
       }
       //Funcionen el archivo index.js
       auth.login(this, credentials, 'graficos')
-
+      //this.MyUser.userOnly = true,
+      //this.MyUser.admin = true 
     }
   }
   

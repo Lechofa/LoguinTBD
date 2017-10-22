@@ -11,6 +11,8 @@
         <h2><blockquote>{{ message }}</blockquote></h2>      
     </div>
 
+    <button class="btn btn-primary" @click="prueba()">Try it</button>
+
     <!--<div class="form-group">
       <input 
         type="text" 
@@ -35,6 +37,7 @@
 
 import auth from '../auth'
 
+
 export default {
 
   data() {
@@ -43,13 +46,18 @@ export default {
       message: 'Probando q el mensaje se puso bien',
       error: ''
     }
+    return {
+
+    }
   },
 
 
 
   methods: {
-
-  }
+    prueba(){
+      auth.myFunction()
+    }
+  } 
 
 }
 </script>
