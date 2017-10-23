@@ -1,6 +1,7 @@
 import {router} from '../index'
 import {someVar} from '../index'
 import {ActualUser} from '../index'
+
 //Aqui incluir las direcciones para realizar las conexiones a la API
 const API_URL = 'http://localhost:3001/'
 const LOGIN_URL = API_URL + 'sessions/create/'
@@ -54,7 +55,9 @@ export default {
 
   logout() {
     localStorage.removeItem('id_token')
-    this.user.authenticated = false
+    this.user.authenticated = false,
+    ActualUser.userOnly = false,
+    ActualUser.admin = false
   },
 
   checkAuth() {
@@ -81,4 +84,4 @@ export default {
       //alert(someVar.total())
       alert(ActualUser.userOnly)
     }
-  }
+  } 

@@ -4,12 +4,14 @@
       <ul class="nav navbar-nav">
         <li><a v-link="'home'">Home</a></li>
         <li v-if="!user.authenticated"><a v-link="'login'">Login</a></li>
-        <li v-if="user.authenticated"><a v-link="'graficos'">Graficos</a></li>
+        <li v-if="user.authenticated"><a v-link="'graficoPorCanal'">Graficos Por Canal</a></li>
+        <li v-if="user.authenticated"><a v-link="'graficoNoticias'">Graficos Por Noticias</a></li>
         <li v-if="user.authenticated && user.admin"><a v-link="'administracion'">Administración</a></li>
         <li v-if="user.authenticated"><a v-link="'login'" @click="logout()">Logout</a></li>
       </ul>
-    </div>    
+    </div>
   </nav>
+
   <div class="container">
     <router-view></router-view>
   </div>
@@ -17,7 +19,7 @@
 </template>
 
 <script>
-  
+
 import auth from '../auth'
 
 export default {
@@ -34,5 +36,6 @@ export default {
       auth.logout()
     }
   }
+
 }
 </script>

@@ -1,42 +1,44 @@
 import Vue from 'vue'
-import App from './components/App.vue'
+
 import Home from './components/Home.vue'
-import SecretQuote from './components/SecretQuote.vue'
 import Administracion from './components/Administracion.vue'
 import Graficos from './components/Graficos.vue'
-import Admin from './components/Admin.vue'
-//import Signup from './components/Signup.vue'
-
 import Login from './components/Login.vue'
-import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
-Vue.use(VueResource)
+
+/*
+import GraficoPorCanal from './Graficos/components/graficoPorCanal.vue'
+import GraficoNoticias from './Graficos/components/graficoNoticias.vue'
+import GraficoTeleseries from './Graficos/components/graficoTeleseries.vue'
+import GraficoMatinales from './Graficos/components/graficoMatinales.vue'*/
+
+
+import GraficoPorCanal from './components/graficoPorCanal.vue'
+import GraficoNoticias from './components/graficoNoticias.vue'
+import GraficoTeleseries from './components/graficoTeleseries.vue'
+import GraficoMatinales from './components/graficoMatinales.vue'
+
+import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
+
+import App from './components/App.vue';
+
+
+Vue.use(VueResource);
 Vue.use(VueRouter)
+
+//require("./style.scss")
 
 import auth from './auth'
 
 Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_token');
 
 // Check the user's auth status when the app starts
-auth.checkAuth()
 
-
-// Sample means of checking user access
-/*const var ActualUser = { 
-  userOnly: false,
-  admin: false}; */
-
-/*
-new Vue({
-  MyUser: {
-    userOnly: false,
-    admin: false
-  }
-})*/
+//auth.checkAuth()
 
 export var ActualUser = {
-  userOnly: false,
-  admin: false
+  userOnly: true,
+  admin: true
 };
 
 
@@ -64,9 +66,6 @@ router.map({
   '/home': {
     component: Home
   },
-  '/secretquote': {
-    component: SecretQuote
-  },  
   '/login': {
     component: Login
   },
@@ -79,9 +78,19 @@ router.map({
     userOnly: true,
     adminOnly: true
   },
-  '/secret-admin-panels': {
-    component: Admin
-    //admin: true
+  '/graficoPorCanal':{
+    component: GraficoPorCanal,
+    userOnly: true
+  },
+  '/graficoNoticias':{
+    component: GraficoNoticias,
+    userOnly: true
+  },
+  '/graficoTeleseries':{
+    component: GraficoTeleseries
+  },
+  '/graficoMatinales':{
+    component: GraficoMatinales
   }
 })
 

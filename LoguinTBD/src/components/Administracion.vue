@@ -1,36 +1,34 @@
 <template>
   <div class="col-sm-6 col-sm-offset-3">
-    <h1>Bienvenido administrador</h1>
-    <div class="alert alert-danger" v-if="error">
-      <p>{{ error }}</p>
-    </div>
-    Aqui van los div clases correspondientes a la data que se quiere enviar (las palabras que se quieren buscar en la bolsa de palabras creo)
-
-    <!--<div class="form-group">
-      <input 
-        type="text" 
-        class="form-control"
-        placeholder="Enter your username"
-        v-model="credentials.username"
-      >
-    </div>
-    <div class="form-group">
-      <input
-        type="password"
-        class="form-control"
-        placeholder="Enter your password"
-        v-model="credentials.password"
-      >
-    </div>
-    <button class="btn btn-primary" @click="submit()">Access</button>-->
+    <h2>{{title}}</h2>
+      <p>
+        <label for="firs">Nombre Programa</label>
+        <input type="text" id="name" name="name" required v-model="show.name" onClick="this.select();" >
+      </p>
+      <p><button v-on:click="addShow()">Agregar Programa</button></p>
   </div>
 </template>
 
 <script>
-//import auth from '../auth'
+//
+  export default{
+    data(){
+      return{
+        title:'Nuevo Programa',
+        show:{name:''}
+      }
+    },
 
-export default {
-
-
-}
+    methods:{
+      addShow:function(){
+        if (name.value == 0 ){
+          alert("Tus campos no fueron llenados")
+        }
+        else{
+              this.$http.post('http://localhost:8080/tvReactions/shows', this.show);
+              alert("Programa Agregado")
+                        }
+        }
+      }
+    }
 </script>

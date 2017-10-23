@@ -28,8 +28,7 @@
         placeholder="Enter your password"
         v-model="credentials.password"
       >
-    </div>
-    <button class="btn btn-primary" @click="submit()">Access</button>-->
+    </div>-->
   </div>
 </template>
 
