@@ -1,0 +1,1 @@
+En esta carpeta encontramos un index.js el cual contiene hasta el momento v0.1 casi todas las funciones que utiliza el front end

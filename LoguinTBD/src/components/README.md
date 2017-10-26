@@ -1,0 +1,1 @@
+En esta carpeta encontramos todas las vistas del front end

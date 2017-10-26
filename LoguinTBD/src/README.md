@@ -1,0 +1,1 @@
+En esta carpeta se encuentra el index.js el cual controla las rutas por las cuales se navega por la pagina web
